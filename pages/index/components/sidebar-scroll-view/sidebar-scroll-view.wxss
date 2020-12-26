@@ -1,0 +1,132 @@
+/* pages/index/components/sidebar-scroll-view/sidebar-scroll-view.wxss */
+
+.sidebar-scroll-view {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100%;
+}
+
+/* left */
+
+.scroller-left {
+  width: 168rpx;
+  padding: 0;
+  margin: 0;
+}
+
+/* right */
+
+.scroller-right {
+  display: flex;
+  width: calc(100vw - 168rpx);
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* sidebar-menu */
+
+.sidebar-menu {
+  width: 168rpx;
+}
+
+.sidebar-item {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-left: 3px solid transparent;
+  user-select: none;
+  padding: 28rpx 24rpx;
+  font-size: 28rpx;
+  line-height: 38rpx;
+  color: #666;
+  background-color: #F5F5F5;
+}
+
+.sidebar-item--hover:not(.sidebar-item--disabled) {
+  background-color: #f2f3f5;
+}
+
+.sidebar-item--selected {
+  color: #333333;
+  font-weight: 600;
+}
+
+.sidebar-item--selected,
+.sidebar-item--selected.sidebar-item--hover {
+  background-color: #fff;
+}
+
+.sidebar-item--disabled {
+  color: #c8c9cc;
+}
+
+/* product */
+
+.product-body {
+  flex: 1;
+  width: 100%;
+}
+
+/* chunk */
+
+.product-body__chunk {
+}
+
+/* chunk-title */
+
+.product-chunk__title {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  line-height: 52rpx;
+  font-size: 26rpx;
+  color: #333333;
+  font-weight: 400;
+  padding: 0 14rpx;
+  background-color: #FFFFFF;
+}
+
+/* product-list */
+
+.product-list {}
+
+
+.product-list__item {
+  position: relative;
+  height: 196rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16rpx;
+  padding-left: 192rpx;
+}
+
+.product-list__item-pic {
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 15rpx;
+  background-color: #D8D8D8;
+}
+
+.product-list__item-title {
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.anchor-point {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}

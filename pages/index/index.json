@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "sidebar-scroll-view": "./components/sidebar-scroll-view/sidebar-scroll-view"
+  }
+}

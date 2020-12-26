@@ -1,0 +1,45 @@
+<!--pages/index/components/sidebar-scroll-view/sidebar-scroll-view.wxml-->
+<view class="sidebar-scroll-view custom-class">
+  <!-- left: bindscroll="onScrollLeftEvent" -->
+  <scroll-view class="scroller-left scroller-left-class" id="scroller-left" scroll-y="{{ true }}" scroll-top="{{ scrollLeftTop }}">
+    <!-- sidebar-menu -->
+    <view class="sidebar-menu">
+      <view
+        class="sidebar-item {{ scrollRightTop >= scrollTopList[index] && scrollRightTop < scrollTopList[index + 1] ? 'sidebar-item--selected' : '' }}"
+        hover-class="sidebar-item--hover"
+        hover-stay-time="70"
+        wx:for="{{ list }}"
+        wx:key="index"
+        data-index="{{ index }}"
+        bind:tap="handleSidebarChange"
+      >
+        <view>{{ item.categoryName }}</view>
+        <view style="color:;font-size:;font-weight:400;">{{ item.confirmedNum }}/{{ item.skuNum }}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- right -->
+  <scroll-view class="scroller-right scroller-right-class" id="scroller-right" scroll-y="{{ true }}" scroll-with-animation="{{ true }}" scroll-into-view="{{ scrollLocationId }}" bindscroll="onScrollRightEvent">
+    <!-- product -->
+    <view class="product-body">
+      <!-- chunk -->
+      <view class="product-body__chunk" wx:for="{{ list }}" wx:key="index">
+        <!-- chunk-title -->
+        <view class="product-chunk__title">{{ item.categoryName }}</view>
+        <!-- 锚点定位: 必须这样子 -->
+        <view class="anchor-point" id="anchor-point-title-{{ index }}"></view>
+        <!-- product-list -->
+        <view class="product-list" id="product-chunk-list-{{ index }}">
+          <view class="product-list__item" wx:for="{{ item.productList }}" wx:for-index="idx" wx:for-item="goodsItem" wx:key="idx">
+            <image
+              class="product-list__item-pic"
+              src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpuui.qpic.cn%2Fvshpic%2F0%2FmgJtAXymTWfJSZbCFzCX8ROr6wHQQoUWGvQ28eO-8qcA42WP_0%2F0.jpg&refer=http%3A%2F%2Fpuui.qpic.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611556396&t=b6f7bfcc5c0f80bc0680be5183dd734e"
+            >
+            </image>
+            <view class="product-list__item-title">{{ goodsItem.productName }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/index/index.wxml-->
+<view class="index">
+  <!-- header -->
+  <view class="index-header">
+    <view class="search">
+      <input class="search-input" type="text" placeholder="搜索 商品名称" />
+    </view>
+  </view>
+  <!-- body -->
+  <view class="index-body">
+    <sidebar-scroll-view wx:if="{{ list.length !== 0 }}" custom-class="sidebar-scroll-view" list="{{ list }}"></sidebar-scroll-view>
+  </view>
+  <!-- footer -->
+  <view class="index-footer">
+    <!-- goods-action -->
+    <view class="goods-action">
+      <view class="goods-action-icon">
+        <image class="goods-action-icon__icon" src="https://wximg.bdsimg.com/thxx_v2/wxapp/images/icon-home-gray.png"></image>
+        首页
+      </view>
+      <view class="goods-action-icon">
+        <image class="goods-action-icon__icon" src="https://wximg.bdsimg.com/thxx_v2/wxapp/images/icon-home-gray.png"></image>
+        购物车
+      </view>
+      <view class="goods-action-btns">
+        <button class="goods-action-button goods-action-button--first goods-action-button--both" style="background:linear-gradient(to right, #F6C644, #FF8600);" loading="{{ addcartLoading }}">
+          <text class="goods-action-button__text">加入购物车</text>
+        </button>
+        <button class="goods-action-button goods-action-button--first goods-action-button--both" style="background:linear-gradient(to right, #FF6300, #FF5030);" loading="{{ addcartLoading }}">
+          <text class="goods-action-button__text">立即购买</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
