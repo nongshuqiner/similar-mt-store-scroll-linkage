@@ -1,6 +1,12 @@
 # similar-mt-store-scroll-linkage
 微信小程序-实现类似美团外卖店铺页面滑动左右联动效果（代码案例）
 
+### 简易效果图：
+
+![简易效果图](./case.png)
+
+通过scroll-view来实现，要求是点击menu，滚动到锚点；滚动到锚点，激活相应的menu。
+
 ### 技术点：
 
 1.点击滚动到锚点位置：可以通过 `scroll-view` 的 `scroll-into-view=""` 属性来实现。[scroll-view](https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html)
@@ -10,3 +16,5 @@
 3.吸顶效果采用：`position: sticky;`。
 
 4.页面滚动到后面时，左侧相应的menu可能会被隐藏，因此我们需要在左侧menu变为下面时，把左侧的向上滚动。
+
+
